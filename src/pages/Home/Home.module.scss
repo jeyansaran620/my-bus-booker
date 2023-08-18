@@ -1,0 +1,21 @@
+.homeWallpaper {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  transition: all 2.5s ease-in;
+  background-image: url(../../assets/welcome_wallpaper.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wallpaperText {
+  margin-top: 30vh;
+}
+
+.homeForm {
+  background-color: #192c32;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
