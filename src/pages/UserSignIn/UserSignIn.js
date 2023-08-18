@@ -1,8 +1,8 @@
 import { Box, Grid, Paper } from "@mui/material";
 import styles from "./UserSignIn.module.scss";
 import StyledText from "../../components/styledComponents/Text";
-import LogInForm from "../../components/auth/LogInForm";
-import SignUpForm from "../../components/auth/SignupForm";
+import LogInForm from "../../components/LogInForm";
+import SignUpForm from "../../components/SignupForm";
 import { useNavigate } from "react-router-dom";
 
 const UserSignIn = ({ signUp }) => {

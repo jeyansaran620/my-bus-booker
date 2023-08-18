@@ -1,11 +1,11 @@
 import { useState } from "react";
-import StyledButton from "../../styledComponents/Button";
+import StyledButton from "../styledComponents/Button";
 import { Box, FormControl, Paper, TextField } from "@mui/material";
 import styles from "./LogInForm.module.scss";
 import { AccountCircle } from "@mui/icons-material";
 import KeyIcon from "@mui/icons-material/Key";
-import StyledText from "../../styledComponents/Text";
-import UseAuth from "../UseAuth";
+import StyledText from "../styledComponents/Text";
+import UseAuth from "../auth/UseAuth";
 
 const LogInForm = () => {
   const [email, setEmail] = useState("");

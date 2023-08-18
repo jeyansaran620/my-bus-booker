@@ -1,4 +1,3 @@
-import "./App.css";
 import StyledEngineProvider from "@mui/material/StyledEngineProvider";
 import {
   Navigate,
@@ -12,21 +11,19 @@ import UserSignIn from "./pages/UserSignIn";
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <StyledEngineProvider injectFirst>
-          <Routes>
-            <Route element={<PrivateRoutes />}>
-              <Route path="/" element={<Home />} />
-            </Route>
+    <Router>
+      <StyledEngineProvider injectFirst>
+        <Routes>
+          <Route element={<PrivateRoutes />}>
+            <Route path="/" element={<Home />} />
+          </Route>
 
-            <Route path="/login" element={<UserSignIn signUp={false} />} />
-            <Route path="/signup" element={<UserSignIn signUp={true} />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </StyledEngineProvider>
-      </Router>
-    </div>
+          <Route path="/login" element={<UserSignIn signUp={false} />} />
+          <Route path="/signup" element={<UserSignIn signUp={true} />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </StyledEngineProvider>
+    </Router>
   );
 }
 
