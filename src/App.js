@@ -8,6 +8,7 @@ import {
 import Home from "./pages/Home/Home";
 import PrivateRoutes from "./components/auth/PrivateRoutes";
 import UserSignIn from "./pages/UserSignIn";
+import BookBus from "./components/BookBus.js";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <StyledEngineProvider injectFirst>
         <Routes>
           <Route element={<PrivateRoutes />}>
+            <Route path="/book/:busId" element={<BookBus />} />
             <Route path="/" element={<Home />} />
           </Route>
 

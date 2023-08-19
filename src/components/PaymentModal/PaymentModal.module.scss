@@ -1,0 +1,20 @@
+.paymentModalContent {
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  .paymentQR {
+    width: 8rem;
+    height: 8rem;
+    background-image: url("../../assets/qr-code.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 1rem;
+  }
+}
