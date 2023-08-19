@@ -1,4 +1,5 @@
-const BUS_BOOKER_URL = "https://my-bus-booker.web.app/";
+const BUS_BOOKER_URL =
+  "https://us-central1-my-bus-booker.cloudfunctions.net/app/";
 const AVAILABLE_BUSES_URI = "availablebuses/";
 const BUS_URI = "bus/";
 const BUS_BOOKING_URI = "book/";

@@ -73,8 +73,8 @@ const AvailableBuses = () => {
                         </StyledText>
                       }
                     />
-                    <ListItemText primary={`↑ 08:30 AM`} />
-                    <ListItemText primary={`↓ 06:50 PM`} />
+                    <ListItemText primary={`↑ ${bus.arrival}`} />
+                    <ListItemText primary={`↓  ${bus.depature}`} />
 
                     <ListItemText
                       primary={
@@ -92,7 +92,7 @@ const AvailableBuses = () => {
                       }
                     />
 
-                    <ListItemText primary={`₹ 840`} />
+                    <ListItemText primary={`₹ ${bus.price}`} />
                     <ListItemText
                       primary={
                         <StyledButton
