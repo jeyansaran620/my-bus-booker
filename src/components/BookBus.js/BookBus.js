@@ -5,7 +5,6 @@ import Loader from "../styledComponents/Loader";
 import StyledText from "../styledComponents/Text";
 import styles from "./BookBus.module.scss";
 import { Box, Grid, Paper } from "@mui/material";
-
 import DataUsageIcon from "@mui/icons-material/DataUsage";
 import WaterfallChartIcon from "@mui/icons-material/WaterfallChart";
 import { sortSeats, splitOddEvenSeats } from "../../services/busUtils";
@@ -14,6 +13,7 @@ import StyledButton from "../styledComponents/Button";
 import PaymentModal from "../PaymentModal/PaymentModal";
 import UseAuth from "../auth/UseAuth";
 import Navbar from "../Navbar";
+import EventSeatIcon from "@mui/icons-material/EventSeat";
 
 const BookBus = ({ setIsSnackbarOpen, setSnackBarMessage }) => {
   const [selectedBus, setSelectedBus] = useState({});
@@ -127,7 +127,68 @@ const BookBus = ({ setIsSnackbarOpen, setSnackBarMessage }) => {
               </Grid>
             </Paper>
           </Grid>
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "space-around",
+              margin: "1rem",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                textAlign: "center",
+                padding: "1rem",
+              }}
+            >
+              <EventSeatIcon color={"primary"} />
+              <StyledText
+                variant={"string"}
+                colorVariant={"dark"}
+                sx={{ marginLeft: "0.5rem" }}
+              >
+                Available
+              </StyledText>
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                textAlign: "center",
+                padding: "1rem",
+              }}
+            >
+              <EventSeatIcon color={"disabled"} />
+              <StyledText
+                variant={"string"}
+                colorVariant={"dark"}
+                sx={{ marginLeft: "0.5rem" }}
+              >
+                Booked
+              </StyledText>
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                textAlign: "center",
+                padding: "1rem",
+              }}
+            >
+              <EventSeatIcon color={"success"} />
+              <StyledText
+                variant={"string"}
+                colorVariant={"dark"}
+                sx={{ marginLeft: "0.5rem" }}
+              >
+                Selected
+              </StyledText>
+            </Box>
+          </Box>
         </Grid>
+
         <Grid item sm={6}>
           <Box
             sx={{
