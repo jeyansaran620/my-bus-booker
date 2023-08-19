@@ -1,16 +1,15 @@
 import AvailableBuses from "../../components/AvailableBuses";
-// import UseAuth from "../../components/auth/UseAuth";
-// import StyledButton from "../../components/styledComponents/Button";
-import StyledText from "../../components/styledComponents/Text";
+import Navbar from "../../components/Navbar";
+import UseAuth from "../../components/auth/UseAuth";
 
 const Home = () => {
-  // const { signOutUser } = UseAuth();
+  const { loggedInUser, signOutUser } = UseAuth();
   return (
     <>
-      <StyledText variant={"h4"} colorVariant={"dark"}>
-        My Bus Booker
-      </StyledText>
-      {/* <StyledButton onClick={() => signOutUser()}>Sign out</StyledButton> */}
+      <Navbar
+        username={loggedInUser ? loggedInUser.email : ""}
+        onLogout={signOutUser}
+      />
       <AvailableBuses />
     </>
   );

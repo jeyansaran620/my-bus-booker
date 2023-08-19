@@ -13,15 +13,16 @@ import Seat from "../Seat/Seat";
 import StyledButton from "../styledComponents/Button";
 import PaymentModal from "../PaymentModal/PaymentModal";
 import UseAuth from "../auth/UseAuth";
+import Navbar from "../Navbar";
 
-const BookBus = () => {
+const BookBus = ({ setIsSnackbarOpen, setSnackBarMessage }) => {
   const [selectedBus, setSelectedBus] = useState({});
   const [busLoading, setBusLoading] = useState(true);
 
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
 
-  const { loggedInUser } = UseAuth();
+  const { loggedInUser, signOutUser } = UseAuth();
 
   const params = useParams();
 
@@ -61,7 +62,11 @@ const BookBus = () => {
 
   return (
     <Box>
-      <StyledText variant={"h5"} colorVariant={"dark"}>
+      <Navbar
+        username={loggedInUser ? loggedInUser.email : ""}
+        onLogout={signOutUser}
+      />
+      <StyledText variant={"h5"} colorVariant={"dark"} sx={{ padding: "1rem" }}>
         {selectedBus.name}
       </StyledText>
       <Grid container className={styles.busBookingContainer}>
@@ -158,10 +163,12 @@ const BookBus = () => {
           open={isPaymentModalOpen}
           handleClose={togglePaymentModal}
           bookingData={{
-            id: 1,
+            id: params.busId,
             userId: loggedInUser.email,
             seats: selectedSeats,
           }}
+          setIsSnackbarOpen={setIsSnackbarOpen}
+          setSnackBarMessage={setSnackBarMessage}
         />
       </Grid>
     </Box>

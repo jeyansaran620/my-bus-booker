@@ -5,10 +5,18 @@ import StyledText from "../styledComponents/Text";
 import { bookBus } from "../../services/busBookerClient";
 import { useNavigate } from "react-router-dom";
 
-const PaymentModal = ({ open, handleClose, bookingData }) => {
+const PaymentModal = ({
+  open,
+  handleClose,
+  bookingData,
+  setIsSnackbarOpen,
+  setSnackBarMessage,
+}) => {
   const navigate = useNavigate();
   const paymentCallback = (isBookingSuccess) => {
     if (isBookingSuccess) {
+      setIsSnackbarOpen(true);
+      setSnackBarMessage("Bus Booked");
       navigate("/");
     }
   };
