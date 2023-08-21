@@ -1,5 +1,7 @@
 .busBookingContainer {
   justify-content: center;
+  flex-wrap: wrap;
+
   .busBody {
     justify-content: space-around;
     flex-wrap: wrap;

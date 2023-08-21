@@ -46,8 +46,13 @@ const AvailableBuses = () => {
   }
 
   return (
-    <Grid container justifyContent="center" spacing={2}>
-      <Grid item sm={12} md={6}>
+    <Grid
+      container
+      justifyContent="center"
+      spacing={2}
+      sx={{ marginTop: "3rem" }}
+    >
+      <Grid item sm={12} md={9}>
         <Paper elevation={6} sx={{ mt: 2, padding: "1rem" }}>
           <StyledText variant={"h6"} colorVariant={"dark"}>
             Available Buses
@@ -56,7 +61,13 @@ const AvailableBuses = () => {
             <List dense={true}>
               {availableBuses.map((bus) => (
                 <Paper key={bus.id} elevation={6} sx={{ mt: 2 }}>
-                  <ListItem sx={{ padding: "0.5rem" }}>
+                  <ListItem
+                    sx={{
+                      padding: "0.5rem",
+                      flexWrap: "wrap",
+                      textAlign: "center",
+                    }}
+                  >
                     <ListItemAvatar>
                       <Avatar>
                         <DepartureBoardIcon />

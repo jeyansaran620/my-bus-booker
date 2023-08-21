@@ -1,18 +1,18 @@
 import { useParams } from "react-router-dom";
 import { getSelectedBus } from "../../services/busBookerClient";
 import { useEffect, useState } from "react";
-import Loader from "../styledComponents/Loader";
-import StyledText from "../styledComponents/Text";
+import Loader from "../../components/styledComponents/Loader";
+import StyledText from "../../components/styledComponents/Text";
 import styles from "./BookBus.module.scss";
 import { Box, Grid, Paper } from "@mui/material";
 import DataUsageIcon from "@mui/icons-material/DataUsage";
 import WaterfallChartIcon from "@mui/icons-material/WaterfallChart";
 import { sortSeats, splitOddEvenSeats } from "../../services/busUtils";
-import Seat from "../Seat/Seat";
-import StyledButton from "../styledComponents/Button";
-import PaymentModal from "../PaymentModal/PaymentModal";
-import UseAuth from "../auth/UseAuth";
-import Navbar from "../Navbar";
+import Seat from "../../components/Seat/Seat";
+import StyledButton from "../../components/styledComponents/Button";
+import PaymentModal from "../../components/PaymentModal/PaymentModal";
+import UseAuth from "../../components/auth/UseAuth";
+import Navbar from "../../components/Navbar";
 import EventSeatIcon from "@mui/icons-material/EventSeat";
 
 const BookBus = ({ setIsSnackbarOpen, setSnackBarMessage }) => {
@@ -78,7 +78,14 @@ const BookBus = ({ setIsSnackbarOpen, setSnackBarMessage }) => {
           >
             Select Seats
           </StyledText>
-          <Grid container spacing={2} sx={{ justifyContent: "center" }}>
+          <Grid
+            container
+            spacing={2}
+            sx={{
+              justifyContent: "center",
+              flexWrap: "wrap",
+            }}
+          >
             <Paper
               elevation={6}
               sx={{
@@ -89,11 +96,13 @@ const BookBus = ({ setIsSnackbarOpen, setSnackBarMessage }) => {
               }}
               className={styles.busBody}
             >
-              <Grid item sm={6}>
-                <WaterfallChartIcon />
+              <Grid item xs={6}>
+                <WaterfallChartIcon
+                  sx={{ margin: "1rem 1.5rem", marginLeft: "-1rem" }}
+                />
               </Grid>
-              <Grid item sm={6}>
-                <DataUsageIcon />
+              <Grid item xs={6}>
+                <DataUsageIcon sx={{ margin: "1rem 1.5rem" }} />
               </Grid>
               <Grid
                 item

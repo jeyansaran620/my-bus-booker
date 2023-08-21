@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ username, onLogout }) => {
   return (
-    <AppBar position="static" className={styles.appBar}>
-      <Toolbar>
+    <AppBar position="static">
+      <Toolbar className={styles.appBar}>
         <StyledText
           variant={"h6"}
           colorVariant={"light"}

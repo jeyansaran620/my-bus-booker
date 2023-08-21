@@ -8,7 +8,7 @@ import {
 import Home from "./pages/Home/Home";
 import PrivateRoutes from "./components/auth/PrivateRoutes";
 import UserSignIn from "./pages/UserSignIn";
-import BookBus from "./components/BookBus.js";
+import BookBus from "./pages/BookBus.js";
 import SnackBarPopup from "./components/styledComponents/SnackBarPopup";
 import { useState } from "react";
 

@@ -14,7 +14,7 @@ const SignUpForm = () => {
 
   return (
     <Paper elevation={6} className={styles.signUpForm}>
-      <FormControl variant="standard">
+      <FormControl variant="standard" sx={{ width: "75%" }}>
         <StyledText variant="h4" colorVariant={"dark"}>
           Sign Up
         </StyledText>
@@ -32,6 +32,7 @@ const SignUpForm = () => {
             placeholder="sample@email.in"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            sx={{ width: "100%" }}
           />
         </Box>
 
@@ -50,6 +51,7 @@ const SignUpForm = () => {
             placeholder="*strong@^%"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            sx={{ width: "100%" }}
           />
         </Box>
         <StyledButton

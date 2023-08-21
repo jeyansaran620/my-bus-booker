@@ -9,7 +9,7 @@ const UserSignIn = ({ signUp }) => {
   const navigate = useNavigate();
   return (
     <Grid container spacing={0}>
-      <Grid item xs={6}>
+      <Grid item xs={12} lg={6}>
         <Paper elevation={6} className={styles.homeWallpaper}>
           <div className={styles.wallpaperText}>
             <StyledText variant="h2" colorVariant={"dark"}>
@@ -18,30 +18,14 @@ const UserSignIn = ({ signUp }) => {
           </div>
         </Paper>
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xs={12} lg={6}>
         <Paper elevation={6} className={styles.homeForm}>
-          <StyledText
-            variant={"h3"}
-            sx={{
-              position: "absolute",
-              top: "20%",
-              left: "50%",
-              transform: "translateX(-50%)",
-            }}
-          >
+          <StyledText variant={"h3"} sx={{ paddingTop: "15vh" }}>
             My Bus Booker
           </StyledText>
           {signUp ? <SignUpForm /> : <LogInForm />}
 
-          <Box
-            sx={{
-              display: "flex",
-              position: "absolute",
-              bottom: "25%",
-              left: "50%",
-              transform: "translateX(-50%)",
-            }}
-          >
+          <Box sx={{ paddingTop: "5vh" }}>
             <StyledText variant={"string"}>
               {signUp ? "Having an Account Already!" : "Don't Have an Account?"}
             </StyledText>

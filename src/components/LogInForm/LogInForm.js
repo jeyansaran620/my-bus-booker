@@ -14,7 +14,7 @@ const LogInForm = () => {
 
   return (
     <Paper elevation={6} className={styles.logInForm}>
-      <FormControl variant="standard">
+      <FormControl variant="standard" sx={{ width: "75%", margin: "2rem" }}>
         <StyledText variant="h4" colorVariant={"dark"}>
           Log In
         </StyledText>
@@ -32,6 +32,7 @@ const LogInForm = () => {
             placeholder="sample@email.in"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            sx={{ width: "100%" }}
           />
         </Box>
 
@@ -50,6 +51,7 @@ const LogInForm = () => {
             placeholder="*strong@^%"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            sx={{ width: "100%" }}
           />
         </Box>
         <StyledButton
